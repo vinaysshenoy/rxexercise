@@ -66,4 +66,14 @@ class RxExercise01Test {
                 .assertComplete()
     }
 
+    @Test
+    fun doubleActuallyDoublesEveryNumberInTheList() {
+        rxExercise01
+                .double(listOf(1, 2, 3, 4, 5))
+                .test()
+                .await()
+                .assertValue(mapOf(1 to 2, 2 to 4, 3 to 6, 4 to 8, 5 to 10))
+                .assertComplete()
+    }
+
 }

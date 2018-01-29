@@ -33,7 +33,7 @@ class RxExercise01 {
     * */
     fun double(numbers: List<Int>): Single<Map<Int, Int>> {
         TODO("Implement this")
-        //Hint: take a look at 'Observable#map' and 'Observable#toMap'
+        //Hint: take a look at 'Observable#toMap'
     }
 
     /*
