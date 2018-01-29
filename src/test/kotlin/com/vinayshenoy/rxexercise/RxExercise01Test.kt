@@ -37,5 +37,33 @@ class RxExercise01Test {
                 .assertComplete()
     }
 
+    @Test
+    fun findEvenNumbersActuallyFindsEvenNumbersInList() {
+        rxExercise01
+                .findEvenNumbers(listOf(1, 2, 3, 4, 5))
+                .test()
+                .await()
+                .assertValue(listOf(2, 4))
+    }
+
+    @Test
+    fun findEvenNumbersCompletesWithEmptyListOnNoEvenNumbersPresent() {
+        rxExercise01
+                .findEvenNumbers(listOf(1, 3, 5))
+                .test()
+                .await()
+                .assertValue(emptyList())
+                .assertComplete()
+    }
+
+    @Test
+    fun findEvenNumbersCompletesWithEmptyListOnEmptyInput() {
+        rxExercise01
+                .findEvenNumbers(emptyList())
+                .test()
+                .await()
+                .assertValue(emptyList())
+                .assertComplete()
+    }
 
 }

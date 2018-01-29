@@ -18,7 +18,16 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
-  mavenCentral()
+  jcenter()
+}
+
+test {
+  testLogging {
+    events 'PASSED', 'SKIPPED', 'FAILED', 'STANDARD_OUT', 'STANDARD_ERROR'
+    showStackTraces true
+    exceptionFormat 'FULL'
+    showStandardStreams true
+  }
 }
 
 dependencies {
