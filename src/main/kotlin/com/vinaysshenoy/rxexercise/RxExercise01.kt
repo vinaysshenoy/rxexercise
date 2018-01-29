@@ -62,6 +62,6 @@ class RxExercise01 {
     * */
     fun sumOfEveryThree(numbers: List<Int>): Single<List<Int>> {
         TODO("Implement this")
-        //Hint: take a look at 'Observable#buffer'
+        //Hint: take a look at 'Observable#buffer' & 'Observable#map' along with 'List#fold'
     }
 }
